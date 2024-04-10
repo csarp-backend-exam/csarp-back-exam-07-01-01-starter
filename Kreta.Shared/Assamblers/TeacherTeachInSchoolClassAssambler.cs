@@ -13,12 +13,12 @@ namespace Kreta.Shared.Assamblers
     {
         public override TeacherTeachInSchoolClassDto ToDto(TeacherTeachInSchoolClass domainEntity)
         {
-            return domainEntity.ToDto();
+            return new TeacherTeachInSchoolClassDto();
         }
 
         public override TeacherTeachInSchoolClass ToModel(TeacherTeachInSchoolClassDto dto)
         {
-            return dto.ToModel();
+            return new TeacherTeachInSchoolClass();
         }
     }
 }

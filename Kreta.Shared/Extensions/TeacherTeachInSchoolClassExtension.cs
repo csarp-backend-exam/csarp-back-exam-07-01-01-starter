@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Kreta.Shared.Extensions
 {
-    internal class TeacherTeachInSchoolClassExtension
+    public class TeacherTeachInSchoolClassExtension
     {
     }
 }
+

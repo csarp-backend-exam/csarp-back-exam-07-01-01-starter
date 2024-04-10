@@ -30,7 +30,7 @@ namespace Kreta.Backend.Repos.Managers
             ISubjectTypeRepo subjectTypeRepo,
             ISchoolClassSubjectsRepo? schoolClassSubjectsRepo,
             ITeacherRepo? teacherRepo,
-            ITypeOfEducationRepo? _typeOfEducationRepo,
+            ITypeOfEducationRepo? _typeOfEducationRepo
             )
         {
             _addressRepo = addressRepo;

@@ -558,6 +558,63 @@ namespace Kreta.Backend.Context
                 }
             };
             #endregion
+            #region Teacher teach in school class
+            List<TeachersTeachInSchoolClass> teachersTeachInSchoolClasses = new List<TeachersTeachInSchoolClass>
+            {
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId2,
+                    TeacherId = teacherId5,
+                    IsTheHoursInOne = false,
+                    NumberOfHours=3,
+                },
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId1,
+                    TeacherId = teacherId5,
+                    IsTheHoursInOne = false,
+                    NumberOfHours=2,
+                },
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId2,
+                    TeacherId = teacherId4,
+                    IsTheHoursInOne = true,
+                    NumberOfHours=3,
+                },
+
+            };
+
+            #endregion
+            #region School class students
+            List<SchoolClassStudents> schoolClassStudents = new List<SchoolClassStudents>
+            {
+                new SchoolClassStudents
+                {
+                    Id=Guid.NewGuid(),
+                    StudnetId = studentId1,
+                    SchoolClassId=schoolClassId1,
+                    DateOfEnrolment=new DateOnly(2022,09,01),
+                },
+                new SchoolClassStudents
+                {
+                    Id=Guid.NewGuid(),
+                    StudnetId = studentId2,
+                    SchoolClassId=schoolClassId1,
+                    DateOfEnrolment=new DateOnly(2022,09,01),
+                },
+                new SchoolClassStudents
+                {
+                    Id=Guid.NewGuid(),
+                    StudnetId = studentId3,
+                    SchoolClassId=schoolClassId2,
+                    DateOfEnrolment=new DateOnly(2023,09,01),
+                },
+            };
+            #endregion
 
             modelBuilder.Entity<EducationLevel>().HasData(educationLevels);
             modelBuilder.Entity<TypeOfEducation>().HasData(typeOfEducations);
@@ -571,6 +628,7 @@ namespace Kreta.Backend.Context
             modelBuilder.Entity<Subject>().HasData(subjects);
             modelBuilder.Entity<PublicSpace>().HasData(publicSpaces);
             modelBuilder.Entity<SchoolClassSubjects>().HasData(schoolClassSubjects);
+            modelBuilder.Entity<TeachersTeachInSchoolClass>().HasData(teachersTeachInSchoolClasses);
         }
     }
 }

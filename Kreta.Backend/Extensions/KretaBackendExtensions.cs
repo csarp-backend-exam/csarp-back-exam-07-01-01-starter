@@ -48,8 +48,12 @@ namespace Kreta.Backend.Extensions
             services.AddScoped<IAddressRepo, AddressRepo<KretaInMemoryContext>>();
             services.AddScoped<IPublicSpaceRepo, PublicSpaceRepo<KretaInMemoryContext>>();
             services.AddScoped<ITypeOfEducationRepo, TypeOfEducationRepo<KretaInMemoryContext>>();
+            services.AddScoped<ISubjectTypeRepo, SubjectTypeRepo<KretaInMemoryContext>>();
 
+            services.AddScoped<ISchoolClassStudentsRepo,SchoolClassStudentsRepo<KretaInMemoryContext>>();
             services.AddScoped<ISchoolClassSubjectsRepo, SchoolClassSubjectsRepo<KretaInMemoryContext>>();
+            services.AddScoped<ITeacherTeachInSchoolClass,TeacherTeachInSchoolClassRepo<KretaInMemoryContext>>();
+            
 
             services.AddScoped<IRepositoryManager, RepositoryManager>();
         }
@@ -70,6 +74,8 @@ namespace Kreta.Backend.Extensions
             services.AddScoped<TypeOfEducationAssambler>();
 
             services.AddScoped<SchoolClassSubjectsAssambler>();
+            services.AddScoped<TeachersTeachInSchoolClassAssambler>();
+            services.AddScoped<SchoolClassStudentsAssambler>();
         }
 
         public static void ConfigureServices(this IServiceCollection services)
